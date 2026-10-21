@@ -19,12 +19,13 @@
  */
 package org.cerberus.core.service.notifications.email;
 
-/**
- *
- * @author vertigo17
- */
-public interface IEmailBodyGeneration {
+import org.cerberus.core.service.notifications.email.entity.EmailTheme;
 
-    public String GenerateBuildContentTable(String system, String build, String revision, String lastBuild, String lastRevision);
+public interface IEmailThemeService {
 
+    /**
+     * Read the email theme (cerberus_email_theme_*) for the given system.
+     * Never fails: invalid or missing values fall back to defaults.
+     */
+    EmailTheme read(String system);
 }
